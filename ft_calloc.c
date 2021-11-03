@@ -6,7 +6,7 @@
 /*   By: ysakine <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:41:33 by ysakine           #+#    #+#             */
-/*   Updated: 2021/11/02 16:20:42 by ysakine          ###   ########.fr       */
+/*   Updated: 2021/11/03 20:26:56 by ysakine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,10 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void			*ptr;
-	unsigned char	*tmp;
 
 	ptr = malloc (count * size);
 	if (!ptr)
 		return (NULL);
-	tmp = (unsigned char *)ptr;
-	while (count--)
-		tmp[count] = 0;
+	ft_bzero(ptr, size * count);
 	return (ptr);
 }

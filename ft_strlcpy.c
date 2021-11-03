@@ -6,7 +6,7 @@
 /*   By: ysakine <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:48:31 by ysakine           #+#    #+#             */
-/*   Updated: 2021/11/03 15:25:16 by ysakine          ###   ########.fr       */
+/*   Updated: 2021/11/03 16:04:54 by ysakine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
-	while (i < dstsize - 1 && dst[i])
+	if (!dstsize)
+		return (ft_strlen(src));
+	while (i < dstsize - 1 && dst[i] && src[i])
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
+	if (dst[i])
+		dst[i] = '\0';
 	return (ft_strlen(src));
 }
