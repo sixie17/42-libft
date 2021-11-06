@@ -6,7 +6,7 @@
 #    By: ysakine <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 17:43:03 by ysakine           #+#    #+#              #
-#    Updated: 2021/11/04 14:16:46 by ysakine          ###   ########.fr        #
+#    Updated: 2021/11/06 10:28:53 by ysakine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ FLAGS = -Wall -Wextra -Werror
 ${NAME}: ${objects}
 	${cc} -c ${FLAGS} *.c
 	ar rc libft.a *.o
-ft_atoi.o : ft_atoi.c
-	${cc} -c ${FLAGS} ft_atoi.c
-ft_memchr.o : ft_memchr.c
-	${cc} -c ${FLAGS} ft_memchr.c
+clean :
+	rm ${objects}
+fclean : clean
+	rm libft.a
+re : fclean ${NAME}

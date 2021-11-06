@@ -6,7 +6,7 @@
 /*   By: ysakine <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:11:58 by ysakine           #+#    #+#             */
-/*   Updated: 2021/11/04 18:02:12 by ysakine          ###   ########.fr       */
+/*   Updated: 2021/11/05 13:34:04 by ysakine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	size_t	j;
 	size_t	k;
+	size_t	l;
 
 	i = 0;
-	j = ft_strlen(buff) - 1;
+	j = ft_strlen(s1) - 1;
 	k = 0;
-	while (s1[i])
-	{
-		if (ft_strchr(set, s1[i]))
-			i++;
-		else
-			break;
-	}
-	while (ft_strchr(set, s1[j]) && j)
+	while (s1[i] && ft_strchr(set, s1[i]))
+		i++;
+	while (j && ft_strchr(set, s1[j]))
 		j--;
-	buff = ft_calloc(j - i + 3, sizeof(char));
+	if (j <= i || !s1[0])
+		return ("\0");
+	buff = ft_calloc(j - i + 2, sizeof(char));
 	if (!buff)
 		return (0);
-	while (k < j + 1)
+	l = j - i + 1;
+	while (k < l)
 	{
 		buff[k] = s1[i];
 		i++;
