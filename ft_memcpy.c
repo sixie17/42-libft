@@ -6,7 +6,7 @@
 /*   By: ysakine <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:30:15 by ysakine           #+#    #+#             */
-/*   Updated: 2021/11/03 13:34:44 by ysakine          ###   ########.fr       */
+/*   Updated: 2021/11/07 14:05:50 by ysakine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t				i;
+	size_t	i;
 
 	i = 0;
 	if (!src && !dst)
@@ -24,5 +24,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		ft_memset(&dst[i], *((char *)(src + i)), 1);
 		i++;
 	}
-		return (dst);
+	return (dst);
 }

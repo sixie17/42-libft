@@ -6,7 +6,7 @@
 /*   By: ysakine <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:13:01 by ysakine           #+#    #+#             */
-/*   Updated: 2021/11/03 20:58:44 by ysakine          ###   ########.fr       */
+/*   Updated: 2021/11/07 14:23:29 by ysakine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 static int	ft_isspace(int c)
 {
-	char varToAvoidWarning = ' ';
-	return (c == '\t' || c == '\n' || c == '\v' || c == '\f'||
-			c == '\r' || c == varToAvoidWarning);
+	char	var_to_avoid_warning;
+
+	var_to_avoid_warning = ' ';
+	return (c == '\t' || c == '\n' || c == '\v' || c == '\f'
+		|| c == '\r' || c == var_to_avoid_warning);
 }
 
 int	ft_atoi(const char *str)

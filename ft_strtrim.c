@@ -6,7 +6,7 @@
 /*   By: ysakine <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:11:58 by ysakine           #+#    #+#             */
-/*   Updated: 2021/11/05 13:34:04 by ysakine          ###   ########.fr       */
+/*   Updated: 2021/11/07 14:11:22 by ysakine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	l = j - i + 1;
 	while (k < l)
-	{
-		buff[k] = s1[i];
-		i++;
-		k++;
-	}
+		buff[k++] = s1[i++];
 	return (buff);
 }

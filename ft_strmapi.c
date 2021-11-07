@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysakine <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 13:45:05 by ysakine           #+#    #+#             */
-/*   Updated: 2021/11/07 14:04:56 by ysakine          ###   ########.fr       */
+/*   Created: 2021/11/07 09:45:27 by ysakine           #+#    #+#             */
+/*   Updated: 2021/11/07 14:09:00 by ysakine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
+	char			*ret;
+	unsigned int	i;
 
 	i = 0;
-	while (i < n)
+	ret = (char *)ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (!ret)
+		return (0);
+	while (s[i])
 	{
-		if (*((unsigned char *)(s1 + i)) != *((unsigned char *)(s2 + i)))
-			return (*((unsigned char *)(s1 + i)) -
-					*((unsigned char *)(s2 + i)));
+		ret[i] = f(i, s[i]);
 		i++;
 	}
-	return (0);
+	return (ret);
 }
