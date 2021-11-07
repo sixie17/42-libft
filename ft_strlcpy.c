@@ -6,7 +6,7 @@
 /*   By: ysakine <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:48:31 by ysakine           #+#    #+#             */
-/*   Updated: 2021/11/03 16:04:54 by ysakine          ###   ########.fr       */
+/*   Updated: 2021/11/07 18:26:18 by ysakine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	if (!dstsize)
 		return (ft_strlen(src));
-	while (i < dstsize - 1 && dst[i] && src[i])
+	while (i < dstsize - 1 && src[i])
 	{
 		dst[i] = src[i];
 		i++;
