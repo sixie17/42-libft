@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysakine <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 10:13:14 by ysakine           #+#    #+#             */
-/*   Updated: 2021/11/08 10:13:21 by ysakine          ###   ########.fr       */
+/*   Created: 2021/11/07 20:51:37 by ysakine           #+#    #+#             */
+/*   Updated: 2021/11/08 11:32:48 by ysakine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+t_list	*ft_lstlast(t_list *lst)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	while (lst)
+	{
+		if (!lst->next)
+			break ;
+		lst = lst->next;
+	}
+	return (lst);
 }
