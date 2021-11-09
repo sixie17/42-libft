@@ -6,7 +6,7 @@
 /*   By: ysakine <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 10:56:20 by ysakine           #+#    #+#             */
-/*   Updated: 2021/11/07 14:13:56 by ysakine          ###   ########.fr       */
+/*   Updated: 2021/11/09 07:58:20 by ysakine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int	i;
 
 	i = 0;
+	if (!f)
+		return ;
 	while (s[i])
 	{
 		f(i, &s[i]);

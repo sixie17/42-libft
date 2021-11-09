@@ -6,7 +6,7 @@
 /*   By: ysakine <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 19:56:28 by ysakine           #+#    #+#             */
-/*   Updated: 2021/11/08 11:34:32 by ysakine          ###   ########.fr       */
+/*   Updated: 2021/11/09 07:52:12 by ysakine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ t_list	*ft_lstnew(void *content)
 	if (!ret)
 		return (NULL);
 	ret->content = content;
+	ret->next = NULL;
 	return (ret);
 }

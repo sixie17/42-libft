@@ -6,7 +6,7 @@
 /*   By: ysakine <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:08:56 by ysakine           #+#    #+#             */
-/*   Updated: 2021/11/08 10:36:55 by ysakine          ###   ########.fr       */
+/*   Updated: 2021/11/09 07:53:34 by ysakine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void*))
 	t_list	*next;
 
 	curent = lst;
+	if (!f)
+		return;
 	while (curent)
 	{
 		next = curent->next;
